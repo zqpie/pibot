@@ -1,2 +1,6 @@
 # pibot
-my software for the sunfounder smart video car kit
+
+
+
+this code is designed to run on a raspberry pi, connected to a sunfounder smart video car kit V2
+
