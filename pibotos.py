@@ -88,10 +88,10 @@ screen.keypad(True)
 
 
 #use this tweak to change the moters middle potition ######
-wheel = 90					   	  # servo                                  #
-speed = 0					  	  # middle                                ##
-pan = 90					  	  # location                             ############
-tilt = 90					  	  # while using                         #############
+wheel = 90					   	  # servo          #
+speed = 0					  	  # middle        ##
+pan = 90					  	  # location     ############
+tilt = 90					  	  # while using #############
 #use this tweak to change the moters middle position ###### software     ############
                                                                           ##      ###
                                                                            #      ###
