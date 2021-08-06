@@ -8,7 +8,7 @@ from time import sleep
 import picar
 import os
 import curses
-sportmode = False
+sport = False
 picar.setup()
 os.system('clear')
 bw = back_wheels.Back_Wheels()
