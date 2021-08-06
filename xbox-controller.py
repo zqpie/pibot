@@ -69,9 +69,9 @@ try:
 	        if self.A == 1:#############  controls
 	            print("a")
 	            bw.backward()
-                        if sport:
-				bw.speed = 100
-			elif sport == False:
+	            if sport == True:
+	                bw.speed = 100
+	        elif sport == False:
 	            		bw.speed = 40
 	        elif self.RightThumb == 1:
                         fw.turn(180)
@@ -138,4 +138,3 @@ finally:
 	fw.turn(90)
 	pan_servo.write(100)
 	tilt_servo.write(90)
-#thankyou for using my code, this code was heavily based and inspired on many projects, as in, the xbox controller software (https://stackoverflow.com/a/66867816) and the moter and servo controls are from sunfounders code for the ball track software.
