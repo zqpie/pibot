@@ -5,70 +5,20 @@ from time import sleep
 import picar
 import os
 import curses # keyboard inputs
-
-
-
-
-
-
 #    controls for the pibot software are as follows
-
-
-
 #  w speeds up the rear wheels
-
-
 #  s puts the car in reverse 
-
-
 #  a and d turn the front wheels
-
-
 #  and the arrow keys control the cameras servos
-
-
 #  e sets the front wheels to the center
-
-
 #  r sets the wheels to a resting speed
-
-
 #  and finally t resets all the wheels and servos to the center
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	# inputs in this file are as follows:
-
 	# you can activate and deactivate "drift mode" witch is where full speed moter motion can be instantly swaped for full speed backwards motion, and the tires drift.
-
 	# next you can tweak the servos resting angle in the reset servos section.
-
 	#also you can modify the controlls.
-
-
-
-
 picar.setup()
-os.system('clear')
-							# misc setup
+os.system('clear')							# misc setup
 bw = back_wheels.Back_Wheels()
 fw = front_wheels.Front_Wheels()
 pan_servo = Servo.Servo(1)
@@ -78,15 +28,6 @@ screen = curses.initscr()
 curses.noecho() # makes keystroks not displayed
 curses.cbreak() # no clue
 screen.keypad(True)
-
-
-
-
-
-
-
-
-
 #use this tweak to change the moters middle potition ######
 wheel = 90					   	  # servo          #
 speed = 0					  	  # middle        ##
