@@ -1,4 +1,4 @@
-# pibot
+# Raspberry pi smart video car V2
 
 
 
