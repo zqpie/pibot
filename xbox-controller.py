@@ -71,7 +71,7 @@ try:
 	            bw.backward()
 	            if sport == True:
 	                bw.speed = 100
-	        elif sport == False:
+	            elif sport == False:
 	            		bw.speed = 40
 	        elif self.RightThumb == 1:
                         fw.turn(180)
