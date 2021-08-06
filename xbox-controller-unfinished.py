@@ -7,27 +7,26 @@ import picar
 from time import sleep
 import picar
 import os
-import curses # keyboard inputs
+import curses
 picar.setup()
 os.system('clear')
-# misc setup
 bw = back_wheels.Back_Wheels()
 fw = front_wheels.Front_Wheels()
 pan_servo = Servo.Servo(1)
 tilt_servo = Servo.Servo(2)
 picar.setup()
 screen = curses.initscr()
-curses.noecho() # makes keystroks not displayed
-curses.cbreak() # no clue
+curses.noecho()
+curses.cbreak()
 screen.keypad(True)
-wheel = 90                                                # servo          #
-speed = 0                                                 # middle        ##
-pan = 90                                                  # location     ############
+wheel = 90
+speed = 0
+pan = 90
 tilt = 90
 bw.speed = 0
 right = 0
-fw.turn(90)                                     #     resting
-pan_servo.write(90)                             #     location (for before and after use of software)
+fw.turn(90)
+pan_servo.write(90)
 tilt_servo.write(90)
 try:
 
@@ -58,44 +57,45 @@ try:
 	        self._monitor_thread = threading.Thread(target=self._monitor_controller, args=())
 	        self._monitor_thread.daemon = True
 	        self._monitor_thread.start()
-	    def read(self): # return the buttons/triggers that you care about in this methode
+	    def read(self):
 	        x = self.LeftJoystickX
 	        y = self.LeftJoystickY
 	        a = self.A
 	        lt = self.LeftTrigger
 	        rt = self.RightTrigger
-	        b = self.X # b=1, x=2
+	        b = self.X 
 	        rb = self.RightBumper
-	        if self.A == 1:
+	        if self.A == 1:#############  controls
 	            print("a")
 	            bw.backward()
 	            bw.speed = 40
 	        elif self.RightThumb == 1:
-                        fw.turn(0)
+                        fw.turn(180)
 	        elif self.LeftThumb == 1:
-	            fw.turn(180)
-	        elif self.RightTrigger == 1:
+	            fw.turn(0)
+	        elif self.A == 1:
 	            bw.speed = 40
 	        elif self.X == 1:
-	            fw.turn(90)
+	            bw.forward()
+	            bw.speed = 30
 	        elif self.B == 1:
-	            bw.stop
+	            bw.stop()################ controls
 	    def _monitor_controller(self):
 	        while True:
 	            events = get_gamepad()
 	            for event in events:
 	                if event.code == 'ABS_Y':
-	                    self.LeftJoystickY = event.state / XboxController.MAX_JOY_VAL # normalize between -1 and 1
+	                    self.LeftJoystickY = event.state / XboxController.MAX_JOY_VAL 
 	                elif event.code == 'ABS_X':
-	                    self.LeftJoystickX = event.state / XboxController.MAX_JOY_VAL # normalize between -1 and 1
+	                    self.LeftJoystickX = event.state / XboxController.MAX_JOY_VAL 
 	                elif event.code == 'ABS_RY':
-	                    self.RightJoystickY = event.state / XboxController.MAX_JOY_VAL # normalize between -1 and 1
+	                    self.RightJoystickY = event.state / XboxController.MAX_JOY_VAL 
 	                elif event.code == 'ABS_RX':
-	                    self.RightJoystickX = event.state / XboxController.MAX_JOY_VAL # normalize between -1 and 1
+	                    self.RightJoystickX = event.state / XboxController.MAX_JOY_VAL 
 	                elif event.code == 'ABS_Z':
-	                    self.LeftTrigger = event.state / XboxController.MAX_TRIG_VAL # normalize between 0 and 1
+	                    self.LeftTrigger = event.state / XboxController.MAX_TRIG_VAL 
 	                elif event.code == 'ABS_RZ':
-	                    self.RightTrigger = event.state / XboxController.MAX_TRIG_VAL # normalize between 0 and 1
+	                    self.RightTrigger = event.state / XboxController.MAX_TRIG_VAL 
 	                elif event.code == 'BTN_TL':
 	                    self.LeftBumper = event.state
 	                elif event.code == 'BTN_TR':
@@ -134,3 +134,4 @@ finally:
 	fw.turn(90)
 	pan_servo.write(100)
 	tilt_servo.write(90)
+#thankyou for using my code, this code was heavily based and inspired on many projects, as in, the xbox controller software (https://stackoverflow.com/a/66867816) and the moter and servo controls are from sunfounders code for the ball track software.
