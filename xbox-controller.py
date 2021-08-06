@@ -8,6 +8,7 @@ from time import sleep
 import picar
 import os
 import curses
+sportmode = False
 picar.setup()
 os.system('clear')
 bw = back_wheels.Back_Wheels()
@@ -68,7 +69,10 @@ try:
 	        if self.A == 1:#############  controls
 	            print("a")
 	            bw.backward()
-	            bw.speed = 40
+			if sport:
+				bw.speed = 100
+			elif sport == False:
+	            		bw.speed = 40
 	        elif self.RightThumb == 1:
                         fw.turn(180)
 	        elif self.LeftThumb == 1:
