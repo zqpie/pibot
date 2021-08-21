@@ -65,11 +65,11 @@ try:
 
 
 		elif char == ord('a'):
-      if wheel == 0:
+      			if wheel == 0:
 			  wheel = wheel - 90
 			  fw.turn(wheel)
 		elif char == ord('d'):
-      if wheel == 0:
+      			if wheel == 0:
 			  wheel = wheel + 90
 			  fw.turn(wheel)
 		elif char == ord('e'):
