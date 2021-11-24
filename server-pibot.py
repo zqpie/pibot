@@ -9,7 +9,7 @@ import os
 
 
 picar.setup()
-os.system('clear')							# misc setup
+os.system('clear')							
 bw = back_wheels.Back_Wheels()
 fw = front_wheels.Front_Wheels()
 pan_servo = Servo.Servo(1)
@@ -19,15 +19,15 @@ picar.setup()
 
 
 
-wheel = 90					   	  # servo          #
-speed = 0					  	  # middle        ##
-pan = 90					  	  # location     ############
+wheel = 90					   	
+speed = 0					  	 
+pan = 90					  	  
 tilt = 90	
 
 cmd = False
 
-fw.turn(90)                                     #     resting
-pan_servo.write(90)                             #     location (for before and after use of software)
+fw.turn(90)                                   
+pan_servo.write(90)                            
 tilt_servo.write(90)
 
 
